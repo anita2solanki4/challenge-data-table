@@ -5,10 +5,11 @@ var createReactClass = require('create-react-class')
 module.exports = createReactClass({
   render () {
     return (
-      <ReactPivot compact='true' rows={rows} dimensions={dimensions}
-        reduce={reduce} calculations={calculations}
-        activeDimensions={['Date', 'Host']} defaultStyles='false'
-        csvTemplateFormat='false' />
+        <ReactPivot compact='true' rows={rows} dimensions={dimensions}
+                    reduce={reduce} calculations={calculations}
+                    activeDimensions={['Date', 'Host']} defaultStyles='false'
+                    csvTemplateFormat='false' />
+
     )
   }
 })

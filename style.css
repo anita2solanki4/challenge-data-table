@@ -30,13 +30,76 @@ th:hover .reactPivot-hideColumn {
     padding: 15px 24px;
 }
 
-.reactPivot .reactPivot-dimensions select {
-    margin-right: 24px;
-    background-color: #dcdcdc;
+.reactPivot .reactPivot-csvExport button {
+    position: relative;
+    background-color: #2ecc71;
+    overflow: hidden;
+    border: none;
+    color: #ffffff;
+    font-family: 'Roboto';
+    font-weight: 500;
+    height: auto;
+    padding: 8px 16px;
+    border-radius: 2px;
+    margin-top: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+}
+
+.reactPivot .reactPivot-csvExport button:hover,
+.reactPivot .reactPivot-csvExport button:focus {
+    background-color: #27ae60;
+    color: #ffffff;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
     outline: none;
 }
 
+.reactPivot .reactPivot-csvExport button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.reactPivot .reactPivot-csvExport button:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+
+.reactPivot .reactPivot-dimensions select {
+    height: auto;
+    margin-right: 24px;
+    padding: 10px 20px 10px 0;
+    outline: none;
+    background: transparent;
+    border-color: #dddddd;
+    border-width: 0px 0px 1px 0px;
+}
+
+.reactPivot .reactPivot-dimensions select option {
+    padding: 30px;
+}
+
+.reactPivot .reactPivot-dimensions select option:hover{
+    color: red;
+}
+
 .react-pivot-date,
+.reactPivot table thead th:first-child,
 .reactPivot table tbody td:first-child {
     padding-left: 24px !important;
 }
@@ -44,6 +107,11 @@ th:hover .reactPivot-hideColumn {
 .react-pivot-display-date,
 .reactPivot table tbody td:last-child {
     padding-right: 24px !important;
+}
+
+.reactPivot .reactPivot-results th.asc:after, .reactPivot .reactPivot-results th.desc:after {
+    font-size: 8px;
+    vertical-align: top;
 }
 
 .reactPivot-results td {
@@ -54,7 +122,8 @@ th:hover .reactPivot-hideColumn {
     padding: 16px 5px !important;
 }
 
-.reactPivot-results td:nth-child(-n+2), .reactPivot-results th:nth-child(-n+2) {
+.reactPivot-results td:nth-child(-n+2),
+.reactPivot-results th:nth-child(-n+2) {
     text-align: left;
 }
 
